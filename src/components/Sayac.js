@@ -46,16 +46,19 @@ ADIM 6:
 */
 
 import React from 'react'; /* ADIM 0 buraya*/
+import { useState } from 'react';
 
 export default function Sayac() {
   /* ADIM 1 buraya*/
-	
+	const [sayici, setSayici] = useState(0);
 	
   const artirici = () => {
     /* ADIM 4 buraya */
+    setSayici(sayici + 1);
   };
   const azaltici = () => {
     /* ADIM 5 */
+    setSayici(sayici - 1);
   };
   const reset = () => {
   };
