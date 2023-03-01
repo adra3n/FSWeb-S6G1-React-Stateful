@@ -61,19 +61,20 @@ export default function Sayac() {
     setSayici(sayici - 1);
   };
   const reset = () => {
+    setSayici(0);
   };
 
   const stil = {
     fontSize: '1.5em',
     marginBottom: '0.3em',
-    color: 'royalblue', /* ADIM 2 */
+    color: sayici%2== 0 ? 'royalblue': "crimson", /* ADIM 2 */
   };
 
   return (
     <div className='widget-counter container'>
       <h2>Sayaç</h2>
       <div id='sayici' style={stil}>
-        Sayı {sayici} {/* ADIM 3  buraya*/ }
+        Sayı {sayici} { sayici % 2 == 0 ? "çift" : "tek"}
       </div>
       <div>
         <button id='artirici' onClick={artirici}>Artırıcı</button>

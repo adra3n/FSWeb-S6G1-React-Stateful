@@ -11,7 +11,7 @@ Aynı zaman içinde yalnız bir harika programcıyı öne çıkarabiliriz.
 Yorumları takip edin.
 */
 
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 /* ADIM 0  */
 
 
@@ -31,6 +31,9 @@ export default function Programcilar() {
   // İki state dilimine ihtiyacımız olduğundan, state hooku iki kez kullanmamız gerekecek..
   // Bir yanda programcılar listesi, diğer yanda öne çıkan programcının idsi.
 
+  const [programciListesi, setProgramciListesi] = useState("");
+  const [programciId, setProgramciId] = useState("");
+
 	
   const oneCikaninIsmi = () => {
     // Bunu sona bırakın!
@@ -38,6 +41,7 @@ export default function Programcilar() {
     // Öne çıkan geliştiricinin _isim_ adını döndürmek için her iki state dilimini kullanacak.
     // Closureların güzelliği, argümanlar yoluyla bilgi enjekte etmeye gerek kalmadan programın 
 	// bu bölgesinden her iki state dilimini de "görebilmemiz"dir.
+  useState(enIyilerListesi.isim);
   };
 
   const stil = {
@@ -57,7 +61,7 @@ export default function Programcilar() {
           " */
           enIyilerListesi.map(dev =>
             <div className='programmer' key={dev.id}>
-              {dev.isim} <button onClick={() => {/* burada dev.id 'yi öne çıkan id'ye atayın */ }}>Kutla</button>
+              {dev.isim} <button onClick={() => {/* burada dev.id 'yi öne çıkan id'ye atayın */  }}>Kutla</button>
             </div>
           )
         }
